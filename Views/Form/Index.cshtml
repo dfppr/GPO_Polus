@@ -1,0 +1,48 @@
+﻿@model Form
+@{
+    ViewData["Title"] = "Анкета";
+}
+
+<h1>Анкета</h1>
+
+<form method="post" asp-controller="Form" asp-action="Check">
+    <label asp-for="FullName"></label>
+    <input type="text" id="FullName" name="FullName" maxlength="50" pattern="[а-яА-ЯA-Za-z\s]*" asp-for="FullName" />
+    <span asp-validation-for="FullName"></span> 
+    
+    <label asp-for="Age"></label>
+    <input type="number" asp-for="Age" min="18" max="100"/>
+    <span asp-validation-for="Age"></span>
+
+    <label asp-for="Education"></label>
+    <select class="education" name="Education", id="Education">
+        <option value="value1">Среднее общее</option>
+        <option value="value2">Среднее профессиональное</option>
+        <option value="value3">Высшее</option>
+        <option value="value4">Послевузовское профессиональное образование</option>
+    </select>
+    <span asp-validation-for="Education"></span>
+
+    <label asp-for="AddEducation"></label>
+    <input asp-for="AddEducation" />
+    <span asp-validation-for="AddEducation"></span>
+
+    <label asp-for="Competence"></label>
+    <input asp-for="Competence" />
+    <span asp-validation-for="Competence"></span>
+
+    <label asp-for="Email"></label>
+    <input type="email" id="email" name="email" data-validation-email="true" asp-for="Email" />
+    <span asp-validation-for="Email"></span>
+
+    <label asp-for="PhoneNumber"></label>
+    <input id="phone" type="tel" name="phone" value="+7" pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}" asp-for="PhoneNumber" />
+    <span asp-validation-for="PhoneNumber"></span>
+
+    <label asp-for="AddInfo"></label>
+    <input asp-for="AddInfo" />
+    <span asp-validation-for="AddInfo"></span>
+
+    <input type="submit" value="Отправить" />
+
+</form>
