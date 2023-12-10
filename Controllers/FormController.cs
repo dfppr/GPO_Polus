@@ -3,6 +3,7 @@ using System.Diagnostics;
 using DocuSign.eSign.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Routing.Constraints;
 
 namespace App_GPO.Controllers
 {
@@ -10,9 +11,6 @@ namespace App_GPO.Controllers
     {
         public IActionResult Index()
         {
-            //string[] source = {"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", };
-            //SelectList selectlist = new SelectList(source, source[2]);
-            //ViewBag.SelectItems = SelectList;
             return View();
         }
 
@@ -21,10 +19,24 @@ namespace App_GPO.Controllers
         {
             if(ModelState.IsValid)
             {
-                return Redirect("/");
+                //Сохранение данных в файл
+                string fileName = "..\\App_GPO\\data.txt";
+
+                using (StreamWriter writer = new StreamWriter(fileName))
+                {
+                    writer.WriteLine("ФИО: " + Request.Form["FullName"]);
+                    writer.WriteLine("Дата рождения: " + Request.Form["Birthday"]);
+                    writer.WriteLine("Образование: " + Request.Form["Education"]);
+                    writer.WriteLine("Дополнительное образвание: " + Request.Form["AddEducation"]);
+                    writer.WriteLine("Опыт работы: " + Request.Form["Experience"]);
+                    writer.WriteLine("Email: " + Request.Form["Email"]);
+                    writer.WriteLine("Номер телефона: " + Request.Form["PhoneNumber"]);
+                    writer.WriteLine("Дополнительная информация: " + Request.Form["AddInfo"]);
+                }
             }
             return View("Index");
         }
+
 
     }
 }
