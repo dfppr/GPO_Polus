@@ -20,7 +20,7 @@ namespace App_GPO.Controllers
             if(ModelState.IsValid)
             {
                 //Сохранение данных в файл
-                string fileName = "..\\App_GPO\\data.txt";
+                string fileName = "..\\data.txt";
 
                 using (StreamWriter writer = new StreamWriter(fileName))
                 {
