@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using DocuSign.eSign.Model;
+using System.ComponentModel.DataAnnotations;
 
 namespace App_GPO.Models
 {
@@ -10,7 +11,7 @@ namespace App_GPO.Models
 
         [Display(Name = "Дата рождения")]
         [Required(ErrorMessage = "Заполните поле")]
-        public int Birthday { get; set; }
+        public DateTime Birthday { get; set; }
 
         [Display(Name = "Образование")]
         [Required(ErrorMessage = "Заполните поле")]

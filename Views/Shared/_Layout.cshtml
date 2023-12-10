@@ -5,18 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <script src="https://unpkg.com/imask"></script>
 </head>
+
 <body>
-    <header>
-        <span class="logo">Цифровой HR</span>
-        <nav>
-            <a href="/">Главная</a>
-            <a href="/form">Анкета</a>
-        </nav>
-    </header>
-    <main>
-        @RenderBody()
-    </main>
-    <footer>Все права защищены</footer>
+        <header>
+            <div class="image-container"><img src="https://profstories.ru/images/Organizatsiya/logotip_polyus_0_1.png"></div>
+            <div class="create-line"></div>
+            <span class="logo">Цифровой HR</span>
+            <nav class="menu">
+                <a href="/">Главная</a>
+                <a href="/form">Анкета</a>
+            </nav>
+        </header>
+        <main>
+            @RenderBody()
+        </main>
+        <footer>
+            <a class="box">Политика конфиденциальности</a>
+            <a class="box">Условия использования</a>
+            <a class="box">Обратная связь</a>
+            <a class="box">Контакты</a>
+    
+        </footer>
 </body>
 </html>

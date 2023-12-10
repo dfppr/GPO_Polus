@@ -4,38 +4,76 @@
 }
 
 body {
-    background: #ffffff;
-    font-family: Calibri;
+    background-color: white;
+    font-family: Bahnschrift;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
 }
 
 header {
     width: 80%;
-    padding: 15px 10%;
+    padding: 25px 10%;
     color: black;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background: #dcdcdc;
-    border-bottom: 2px solid #000;
+    background-color: white;
+    font-weight: 300;
+    font-size: 20px;
+}
+.create-line {
+    
+    height: 45px;
+    border-left: 2px solid #2a2072;
 }
 
 header .logo {
-    font-weight: 600;
-    font-size: 25px;
+    font-weight: 500;
+    font-size: 35px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
-header nav a {
-    color: black;
-    text-decoration: none;
-    margin-left: 15px;
+    header nav a {
+        margin-left: 30px;
+        color: black;
+        text-decoration: none;
+    }
+
+/*.menu {
+    justify-content: space-between;
+    margin-left: 570px;
+}*/
+
+header nav a:hover {text-decoration: none}
+
+.image-container {
 }
 
-header nav a:hover {text-decoration: underline}
+img {
+    padding-right: 40px;
+    width: 73px;
+    height: 60px;
+}
 
 main {
     width: 80%;
     padding: 15px 10%;
     margin: 50px 0;
+    padding-bottom: 100px;
+    flex: 1;
+}
+
+h1 {
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-top: 50px;
+    font-weight: 100;
+    font-size: 23px;
 }
 
 main label {
@@ -43,7 +81,6 @@ main label {
     margin-top: 10px;
     display: block;
 }
-    
     main input:not([type="submit"]) {
         width: 40%;
         padding: 10px 14px;
@@ -54,19 +91,20 @@ main label {
         margin-top: 7px;
     }
 
-        main input:not([type="submit"]):focus {
-            border: 1px solid #2f00ff;
-        }
+    main input:not([type="submit"]):focus {
+        border: 1px solid #2f00ff;
+    }
 
 main input[type="submit"] {
-    width: 40%;
+    width: 20%;
     padding: 10px 0;
     text-align: center;
     font-size: 15px;
     border: 0;
-    margin-top: 7px;
+    margin-top: 20px;
     background: #d4d4d4;
     font-weight: bold;
+    margin-left: 11%;
 }
 
     main input[type="submit"]:hover {
@@ -80,11 +118,8 @@ main input[type="submit"] {
         margin: 5px 0;
     }
 
-
 .ddlist {
-    font-family: Calibri;
-    width: 640px;
-    /*width: 80%;*/
+    width: 42%;
     height: 40px;
     padding: 10px 14px;
     font-size: 16px;
@@ -94,22 +129,27 @@ main input[type="submit"] {
     margin-top: 7px;
 }
 
-
-    .form_radio {
-        width: 40%;
-        display: flex;
-        flex-direction: row;
-        height: 28px;
-        position: relative;
-        align-items: center;
-    }
+.form_radio {
+    
+    display: flex;
+    flex-direction: row;
+    height: 28px;
+    position: relative;
+    align-items: center;
+}
 
 footer {
-    margin-top: 150px;
+    grid-row-start: 3;
+    grid-row-end: 4;
     text-align: center;
+    font-weight: 300;
     width: 100%;
-    padding: 25px 0;
+    padding: 40px 0;
     color: #fff;
     background: #333;
-    border-top: 2px solid #000;
 }
+
+.box {
+    padding: 40px;
+}
+

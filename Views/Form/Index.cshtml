@@ -10,108 +10,71 @@
     <!--FULLNAME-->
 
     <label asp-for="FullName"></label>
-    <input type="text" id="FullName" name="FullName" maxlength="50" pattern="[а-яА-ЯA-Za-z\s]*" asp-for="FullName" />
+    <input class="form" type="text" id="FullName" name="FullName" maxlength="50" pattern="[а-яА-ЯA-Za-z\s]*" asp-for="FullName" />
     <span asp-validation-for="FullName"></span> 
 
     <!--BIRTHDAY-->
     
     <label asp-for="Birthday"></label>
-    <input type="date" id="birthday" name="Birthday" asp-for="Birthday" />
+    <input class="form" type="date" id="birthday" name="Birthday" asp-for="Birthday" />
     <span asp-validation-for="Birthday"></span>
 
     <!--EDUCATION-->
 
     <label asp-for="Education"></label>
-    <select class="ddlist" name="Education", id="Education">
-        <option value="value1">Среднее общее</option>
-        <option value="value2">Среднее профессиональное</option>
-        <option value="value3">Высшее</option>
-        <option value="value4">Послевузовское профессиональное образование</option>
+    <select class="ddlist" name="Education" id="Education">
+        <option value="Среднее общее">Среднее общее</option>
+        <option value="Среднее профессиональное">Среднее профессиональное</option>
+        <option value="Высшее">Высшее</option>
+        <option value="Послевузовское профессиональное образование">Послевузовское профессиональное образование</option>
     </select>
     <span asp-validation-for="Education"></span>
 
     <!--ADDEDUCATION-->
 
     <label asp-for="AddEducation"></label>
-   
-    <label>
-        <input type="radio" name="optionAdd" value="1" onclick="showFieldAdd()"> Есть
-    </label>
-    <label>
-        <input type="radio" name="optionAdd" value="2" onclick="showFieldAdd()"> Нет
-    </label>
-
-    <div id="fieldContainerAdd" style="display: none;">
-        <select class="ddlist" name="addeducation" id="addeducation">
-            <option value="value1">Курсы повышения квалицикации</option>
-            <option value="value2">Профессиональная переподготовка</option>
-        </select>
-        <span asp-validation-for="AddEducation"></span>
-    </div>
-
-    <script>
-        function showFieldAdd() {
-            var fieldContainerAdd = document.getElementById("fieldContainerAdd");
-            var optionAdd = document.querySelector('input[name="optionAdd"]:checked').value;
-
-            if (optionAdd === "1") {
-                fieldContainerAdd.style.display = "block";
-            } else {
-                fieldContainerAdd.style.display = "none";
-            }
-        }
-    </script>
+    <select class="ddlist" name="AddEducation" id="AddEducation">
+        <option value="Нет">Нет</option>
+        <option value="Повышение квалификации">Повышение квалификации</option>
+        <option value="Профессиональная переподготовка">Профессиональная переподготовка</option>
+    </select>
+    <span asp-validation-for="AddEducation"></span>
 
     <!--EXPERIENCE-->
 
     <label asp-for="Experience"></label>
-
-    <label>
-        <input type="radio" name="optionExp" value="1" onclick="showFieldExp()"> Есть
-    </label>
-    <label>
-        <input type="radio" name="optionExp" value="2" onclick="showFieldExp()"> Нет
-    </label>
-
-    <div id="fieldContainerExp" style="display: none;">
-        <select class="ddlist" name="experience" id="experience">
-            <option value="value1">Меньше года</option>
-            <option value="value2">1-3 года</option>
-            <option value="value3">3-6 лет</option>
-            <option value="value4">Больше 6 лет</option>
+    <select class="ddlist" name="Experience" id="Experience">
+        <option value="Нет">Нет</option>
+        <option value="Меньше года">Меньше года</option>
+        <option value="1-3 года">1-3 года</option>
+        <option value="3-6 лет">3-6 лет</option>
+        <option value="Больше 6 лет">Больше 6 лет</option>
     </select>
-        <span asp-validation-for="Experience"></span>
-    </div>
-
-    <script>
-        function showFieldExp() {
-            var fieldContainerExp = document.getElementById("fieldContainerExp");
-            var optionExp = document.querySelector('input[name="optionExp"]:checked').value;
-
-            if (optionExp === "1") {
-                fieldContainerExp.style.display = "block";
-            } else {
-                fieldContainerExp.style.display = "none";
-            }
-        }
-    </script>
+    <span asp-validation-for="Experience"></span>
  
     <!--EMAIL-->
 
     <label asp-for="Email"></label>
-    <input type="email" id="email" name="email" data-validation-email="true" asp-for="Email" />
+    <input class="form" type="email" id="email" name="email" data-validation-email="true" asp-for="Email" />
     <span asp-validation-for="Email"></span>
 
     <!--PHONE-->
 
     <label asp-for="PhoneNumber"></label>
-    <input id="phone" type="tel" name="phone" value="+7" pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}" asp-for="PhoneNumber" />
+    <input id="phone" asp-for="PhoneNumber" />
+    <script>
+        const element = document.getElementById('phone');
+        const maskOptions = {
+            mask: '+{7}(000)000-00-00'
+        };
+        const mask = IMask(element, maskOptions);
+    </script>
     <span asp-validation-for="PhoneNumber"></span>
 
     <!--ADDINFO-->
 
     <label asp-for="AddInfo"></label>
-    <input asp-for="AddInfo" />
+    <input class="form" asp-for="AddInfo" />
     <span asp-validation-for="AddInfo"></span>
 
     <input type="submit" value="Отправить" />
