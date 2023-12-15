@@ -31,12 +31,11 @@ namespace App_GPO.Controllers
                     writer.WriteLine("Опыт работы: " + Request.Form["Experience"]);
                     writer.WriteLine("Email: " + Request.Form["Email"]);
                     writer.WriteLine("Номер телефона: " + Request.Form["PhoneNumber"]);
-                    writer.WriteLine("Дополнительная информация: " + Request.Form["AddInfo"]);
+                    writer.WriteLine("Наличие других компетенций:" + Request.Form["AddInfo"]);
+                    writer.WriteLine("Ссылка на социальную сеть:" + Request.Form["Social"]);
                 }
             }
             return View("Index");
         }
-
-
     }
 }

@@ -4,79 +4,95 @@
 }
 
 <h1>Анкета</h1>
-
+<h2>Заполните анкету для отправки заявки, чтобы получить обратную связь </h2>
 <form method="post" asp-controller="Form" asp-action="Check">
 
-    <!--FULLNAME-->
+    <div class="form-borders">
+        <div class="in-form">
 
-    <label asp-for="FullName"></label>
-    <input class="form" type="text" id="FullName" name="FullName" maxlength="50" pattern="[а-яА-ЯA-Za-z\s]*" asp-for="FullName" />
-    <span asp-validation-for="FullName"></span> 
-
-    <!--BIRTHDAY-->
+            <!--FULLNAME-->
     
-    <label asp-for="Birthday"></label>
-    <input class="form" type="date" id="birthday" name="Birthday" asp-for="Birthday" />
-    <span asp-validation-for="Birthday"></span>
+            <label asp-for="FullName"></label>
+            <input type="text" id="FullName" name="FullName" maxlength="50" pattern="[а-яА-ЯA-Za-z\s]*" asp-for="FullName" />
+            <span asp-validation-for="FullName"></span> 
 
-    <!--EDUCATION-->
+            <!--BIRTHDAY-->
+    
+            <label asp-for="Birthday"></label>
+            <input type="date" id="birthday" name="Birthday" asp-for="Birthday" />
+            <span asp-validation-for="Birthday"></span>
 
-    <label asp-for="Education"></label>
-    <select class="ddlist" name="Education" id="Education">
-        <option value="Среднее общее">Среднее общее</option>
-        <option value="Среднее профессиональное">Среднее профессиональное</option>
-        <option value="Высшее">Высшее</option>
-        <option value="Послевузовское профессиональное образование">Послевузовское профессиональное образование</option>
-    </select>
-    <span asp-validation-for="Education"></span>
+            <!--EDUCATION-->
 
-    <!--ADDEDUCATION-->
+            <label asp-for="Education"></label>
+            <select class="ddlist" name="Education" id="Education">
+                <option value="Неполное среднее">Неполное среднее</option>
+                <option value="Полное среднее">Полное среднее</option>
+                <option value="Среднее профессиональное">Среднее профессиональное</option>
+                <option value="Высшее (бакалавриат)">Высшее (бакалавриат)</option>
+                <option value="Высшее (специалитет)">Высшее (специалитет)</option>
+                <option value="Высшее (магистратура)">Высшее (магистратура)</option>
+                <option value="Аспирантура">Аспирантура</option>
+                <option value="Докторантура">Докторантура</option>
+            </select>
+            <span asp-validation-for="Education"></span>
 
-    <label asp-for="AddEducation"></label>
-    <select class="ddlist" name="AddEducation" id="AddEducation">
-        <option value="Нет">Нет</option>
-        <option value="Повышение квалификации">Повышение квалификации</option>
-        <option value="Профессиональная переподготовка">Профессиональная переподготовка</option>
-    </select>
-    <span asp-validation-for="AddEducation"></span>
+            <!--ADDEDUCATION-->
 
-    <!--EXPERIENCE-->
+            <label asp-for="AddEducation"></label>
+            <select class="ddlist" name="AddEducation" id="AddEducation">
+                <option value="Нет">Нет</option>
+                <option value="Повышение квалификации">Повышение квалификации</option>
+                <option value="Профессиональная переподготовка">Профессиональная переподготовка</option>
+            </select>
+            <span asp-validation-for="AddEducation"></span>
 
-    <label asp-for="Experience"></label>
-    <select class="ddlist" name="Experience" id="Experience">
-        <option value="Нет">Нет</option>
-        <option value="Меньше года">Меньше года</option>
-        <option value="1-3 года">1-3 года</option>
-        <option value="3-6 лет">3-6 лет</option>
-        <option value="Больше 6 лет">Больше 6 лет</option>
-    </select>
-    <span asp-validation-for="Experience"></span>
+            <!--EXPERIENCE-->
+
+            <label asp-for="Experience"></label>
+            <select class="ddlist" name="Experience" id="Experience">
+                <option value="Нет">Нет</option>
+                <option value="До года">Меньше года</option>
+                <option value="1-3 года">1-3 года</option>
+                <option value="3-6 лет">3-6 лет</option>
+                <option value="6-9 лет">6-9 лет</option>
+                <option value="10 лет и более">10 лет и более</option>
+            </select>
+            <span asp-validation-for="Experience"></span>
  
-    <!--EMAIL-->
+            <!--EMAIL-->
 
-    <label asp-for="Email"></label>
-    <input class="form" type="email" id="email" name="email" data-validation-email="true" asp-for="Email" />
-    <span asp-validation-for="Email"></span>
+            <label asp-for="Email"></label>
+            <input class="form" type="email" id="email" name="email" data-validation-email="true" asp-for="Email" />
+            <span asp-validation-for="Email"></span>
 
-    <!--PHONE-->
+            <!--PHONE-->
 
-    <label asp-for="PhoneNumber"></label>
-    <input id="phone" asp-for="PhoneNumber" />
-    <script>
-        const element = document.getElementById('phone');
-        const maskOptions = {
-            mask: '+{7}(000)000-00-00'
-        };
-        const mask = IMask(element, maskOptions);
-    </script>
-    <span asp-validation-for="PhoneNumber"></span>
+            <label asp-for="PhoneNumber"></label>
+            <input id="phone" asp-for="PhoneNumber" />
+            <script>
+                const element = document.getElementById('phone');
+                const maskOptions = {
+                    mask: '+{7}(000)000-00-00'
+                };
+                const mask = IMask(element, maskOptions);
+            </script>
+            <span asp-validation-for="PhoneNumber"></span>
 
-    <!--ADDINFO-->
+            <!--SOCIAL-->
 
-    <label asp-for="AddInfo"></label>
-    <input class="form" asp-for="AddInfo" />
-    <span asp-validation-for="AddInfo"></span>
+            <label asp-for="Social"></label>
+            <input asp-for="Social" />
+            <span asp-validation-for="Social"></span>
 
-    <input type="submit" value="Отправить" />
+            <!--ADDINFO-->
+
+            <label asp-for="AddInfo"></label>
+            <textarea class="row" asp-for="AddInfo"></textarea>
+            <span asp-validation-for="AddInfo"></span>
+
+            <input type="submit" value="Отправить заявку" />
+        </div>
+    </div>
 
 </form>

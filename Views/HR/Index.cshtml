@@ -1,0 +1,61 @@
+﻿@model HR
+@{
+    ViewData["Title"] = "Страница для HR";
+}
+
+<h1>Все заявки</h1>
+<div class ="sort">
+<label asp-for="Sort"></label>
+    <select name="sort" id="sort">
+    <option value="Нет"></option>
+    <option value="Количество баллов ↑">Количество баллов ↑</option>
+    <option value="Количество баллов ↓">Количество баллов ↓</option>
+    <option value="Фамилия">Фамилия</option>
+    <option value="Дата">Дата</option>
+</select>
+<span asp-validation-for="Sort"></span>
+</div>
+
+<table>
+    <tr>
+        <th class="table-point">Балл</th>
+        <th class="table-name">ФИО</th>
+        <th class="table-date">Дата</th>
+    </tr>
+
+    <tr>
+        <td>9</td>
+        <td>Тихомирова Мария Алексеевна</td>
+        <td>21.11.2023</td>
+    </tr>
+
+    <tr>
+        <td>4</td>
+        <td>Семенов Илья Андреевич</td>
+        <td>10.12.2023</td>
+    </tr>
+
+    <tr>
+        <td>7</td>
+        <td>Михеева Лидия Сергеевна</td>
+        <td>13.01.2023</td>
+    </tr>
+
+    <tr>
+        <td>3</td>
+        <td>Фадеев Николай Андреевич</td>
+        <td>25.12.2022</td>
+    </tr>
+
+    <tr>
+        <td>8</td>
+        <td>Третьяков Вячеслав Ильич</td>
+        <td>18.11.2023</td>
+    </tr>
+
+    <tr>
+        <td>3</td>
+        <td>Соколова Оксана Владимировна</td>
+        <td>03.07.2022</td>
+    </tr>
+</table>
