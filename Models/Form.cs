@@ -33,8 +33,11 @@ namespace App_GPO.Models
         [Required(ErrorMessage = "Заполните поле")]
         public string? PhoneNumber { get; set; }
 
-        [Display(Name = "Дополнительная информация")]
+        [Display(Name = "Наличие других компетенций")]
         public string? AddInfo { get; set; }
+
+        [Display(Name = "Ссылка на социальную сеть")]
+        public string? Social { get; set; }
     }
 
 }
