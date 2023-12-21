@@ -91,7 +91,16 @@
             <textarea class="row" asp-for="AddInfo"></textarea>
             <span asp-validation-for="AddInfo"></span>
 
-            <input type="submit" value="Отправить заявку" />
+            <script>
+                function sendData() {
+                    var name = document.getElementById('FullName').value;;
+                    localStorage.setItem('FullName', name);
+                    window.open('D:\3 курс\ГПО\WebApplication\App_GPO\Views\HR\Index.cshtml', '_blank');
+                }
+            </script>
+
+            <input type="submit" id="submitBtn" value="Отправить заявку" onclick="sendData()"/>
+
         </div>
     </div>
 
