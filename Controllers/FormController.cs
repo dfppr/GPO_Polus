@@ -13,7 +13,7 @@ namespace App_GPO.Controllers
         {
             return View();
         }
-
+        //123 efdkd
         [HttpPost] 
         public IActionResult Check(Form form)
         {
