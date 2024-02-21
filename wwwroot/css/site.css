@@ -147,21 +147,22 @@ h2 {
 }
 
 main label {
-    width: 40%;
+    /*width: 40%;*/
     margin-top: 10px;
     display: block;
+    font-family: Bahnschrift;
 }
-    main input:not([type="submit"]) {
-       
-        width: 96%;
-        padding: 10px 14px;
-        font-size: 14px;
-        border-radius: 10px;
-        border: 1px solid #b1c3ff;
-        outline: none;
-        margin-top: 7px;
-    }
-
+main input:not([type="submit"]) {
+    padding: 10px 14px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 1px solid #b1c3ff;
+    outline: none;
+    margin-top: 7px;
+    min-width: 96%;
+    max-width: 96%;
+}
+  
     main input:not([type="submit"]):focus {
         border: 1px solid #2f00ff;
     }
@@ -192,12 +193,12 @@ main input[type="submit"] {
     }
 
 .in-form input {
-    width: 90%;
+    width: 100%;
 }
 
 .form-borders {
     display: block;
-    padding: 20px;
+    padding: 40px;
     background: #e7f0ff;
     border-radius: 10px;
     width: 50%;
@@ -205,9 +206,8 @@ main input[type="submit"] {
 
 .ddlist {
     width: 100%;
-    height: 40px;
     padding: 10px 14px;
-    font-size: 16px;
+    font-size: 14px;
     border-radius: 10px;
     border: 1px solid #b1c3ff;
     outline: none;
@@ -223,10 +223,8 @@ main input[type="submit"] {
 }
 
 .row {
-    width: 96%;
-    height: 40px;
-    padding: 10px 14px;
-    font-size: 16px;
+    padding: 14px;
+    font-size: 14px;
     border-radius: 10px;
     border: 1px solid #b1c3ff;
     outline: none;
@@ -234,6 +232,21 @@ main input[type="submit"] {
     min-width: 96%;
     max-width: 96%;
     min-height: 40px;
+    font-family: Bahnschrift;
+}
+
+.notification {
+    font-weight: 300;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #b1c3ff;
+    z-index: 1000;
 }
 
 /*-------------HR-------------*/

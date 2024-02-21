@@ -5,6 +5,10 @@ namespace App_GPO.Models
 {
     public class Form
     {
+        [Display(Name = "Вакансия")]
+        [Required(ErrorMessage = "Заполните поле")]
+        public string? Vacancy { get; set; }
+
         [Display(Name = "ФИО")]
         [Required(ErrorMessage = "Заполните поле")]
         public string? FullName { get; set; }
