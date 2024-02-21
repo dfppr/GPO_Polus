@@ -10,10 +10,22 @@
     <div class="form-borders">
         <div class="in-form">
 
+            <!--VACANCY-->
+
+            <label asp-for="Vacancy"></label>
+            <select class="ddlist" name="Vacancy" id="vacancy">
+                <option value="Специалист по информационной безопасности">Специалист по информационной безопасности</option>
+                <option value="Инженер по испытаниям 3 категории">Инженер по испытаниям 3 категории</option>
+                <option value="Инженер по снабжению">Инженер по снабжению</option>
+                <option value="Инженер программист 1С">Инженер программист 1С</option>
+                <option value="Инженер по нормированию труда 1 категории">Инженер по нормированию труда 1 категории</option>
+            </select>
+            <span asp-validation-for="Vacancy"></span>
+
             <!--FULLNAME-->
     
             <label asp-for="FullName"></label>
-            <input type="text" id="FullName" name="FullName" maxlength="50" pattern="[а-яА-ЯA-Za-z\s]*" asp-for="FullName" />
+            <input type="text" id="fullname" name="FullName" maxlength="50" pattern="[а-яА-ЯA-Za-z\s]*" asp-for="FullName" />
             <span asp-validation-for="FullName"></span> 
 
             <!--BIRTHDAY-->
@@ -25,7 +37,7 @@
             <!--EDUCATION-->
 
             <label asp-for="Education"></label>
-            <select class="ddlist" name="Education" id="Education">
+            <select class="ddlist" name="Education" id="education">
                 <option value="Неполное среднее">Неполное среднее</option>
                 <option value="Полное среднее">Полное среднее</option>
                 <option value="Среднее профессиональное">Среднее профессиональное</option>
@@ -40,7 +52,7 @@
             <!--ADDEDUCATION-->
 
             <label asp-for="AddEducation"></label>
-            <select class="ddlist" name="AddEducation" id="AddEducation">
+            <select class="ddlist" name="AddEducation" id="addeducation">
                 <option value="Нет">Нет</option>
                 <option value="Повышение квалификации">Повышение квалификации</option>
                 <option value="Профессиональная переподготовка">Профессиональная переподготовка</option>
@@ -50,7 +62,7 @@
             <!--EXPERIENCE-->
 
             <label asp-for="Experience"></label>
-            <select class="ddlist" name="Experience" id="Experience">
+            <select class="ddlist" name="Experience" id="experience">
                 <option value="Нет">Нет</option>
                 <option value="До года">Меньше года</option>
                 <option value="1-3 года">1-3 года</option>
@@ -91,15 +103,23 @@
             <textarea class="row" asp-for="AddInfo"></textarea>
             <span asp-validation-for="AddInfo"></span>
 
-            <script>
-                function sendData() {
-                    var name = document.getElementById('FullName').value;;
-                    localStorage.setItem('FullName', name);
-                    window.open('D:\3 курс\ГПО\WebApplication\App_GPO\Views\HR\Index.cshtml', '_blank');
-                }
-            </script>
+            <input type="submit" id="submitBtn" value="Отправить заявку" onclick="showNotification()" />
 
-            <input type="submit" id="submitBtn" value="Отправить заявку" onclick="sendData()"/>
+            <div id="notification" class="notification">Резюме отправлено!</div>
+
+            <script>
+                
+                function showNotification() {
+                    console.log('Функция 2 выполнена');
+                    var notification = document.getElementById("notification");
+                    notification.style.display = "block";
+
+                    setTimeout(function () {
+                        notification.style.display = "none";
+                    }, 3000); // Уведомление исчезнет через 3 секунды
+                }
+
+            </script>
 
         </div>
     </div>

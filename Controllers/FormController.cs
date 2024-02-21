@@ -24,6 +24,7 @@ namespace App_GPO.Controllers
 
                 using (StreamWriter writer = new StreamWriter(fileName))
                 {
+                    writer.WriteLine("Заявка на должность: " + Request.Form["Vacancy"]);
                     writer.WriteLine("ФИО: " + Request.Form["FullName"]);
                     writer.WriteLine("Дата рождения: " + Request.Form["Birthday"]);
                     writer.WriteLine("Образование: " + Request.Form["Education"]);
@@ -35,7 +36,7 @@ namespace App_GPO.Controllers
                     writer.WriteLine("Ссылка на социальную сеть:" + Request.Form["Social"]);
                 }
             }
-            return View("Index");
+            return Content("Резюме отправлено", "form/html");
         }
     }
 }
