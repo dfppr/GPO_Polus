@@ -15,7 +15,7 @@ namespace App_GPO.Controllers
         }
 
         [HttpPost] 
-        public IActionResult Check(Form form)
+        public IActionResult Check(Form form) 
         {
             if(ModelState.IsValid)
             {
